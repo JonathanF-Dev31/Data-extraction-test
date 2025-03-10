@@ -2,6 +2,15 @@ import PyPDF2
 import os
 import re
 
+"""
+Extracts income information from a PDF file.
+This function opens a PDF file, extracts text from each page, and uses regular expressions to find and extract the name of the owner and the total gross equity.
+Args:
+    pdf_path (str): The file path to the PDF file.
+Returns:
+    None: This function prints the extracted information (name owner and total gross equity) to the console.
+"""
+
 def exract_income_info(pdf_path):
     #open the pdf file
     with open(pdf_path, "rb") as file:

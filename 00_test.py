@@ -1,6 +1,17 @@
 import pdfplumber
 import os
 
+"""
+Extracts and prints specific values from a PDF file based on coordinate ranges.
+This function opens a PDF file, iterates through its pages, and extracts words.
+It checks if the coordinates of each word fall within specified ranges and prints
+the word if it matches the criteria.
+Args:
+    pdf_path (str): The file path to the PDF file to be processed.
+Returns:
+    None
+"""
+
 # Ruta de la carpeta con los PDFs
 carpeta_pdfs = r"H:\PROYECTOS\Data extraction test\PDFs"
 
