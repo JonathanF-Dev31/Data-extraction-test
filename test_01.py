@@ -1,6 +1,7 @@
 import PyPDF2
 import os
 import re
+from test_02 import insert_data
 
 """
 Extracts income information from a PDF file.
@@ -44,9 +45,14 @@ def exract_income_info(pdf_path):
         print(f"Name owner: {name_owner}")
         print(f"Total gross equity: {total_gross_equity}")
 
+        return name_owner, total_gross_equity
+
 pdf_path_folder = "H:\\PROYECTOS\\Data extraction test\\PDFs"
 
+
+name_owner, total_gross_equity = '', ''
 for file_name in os.listdir(pdf_path_folder):
     if file_name.endswith(".pdf"):
         file_path = os.path.join(pdf_path_folder, file_name)
-        exract_income_info(file_path)    
+        name_owner, total_gross_equity = exract_income_info(file_path)
+        insert_data(name_owner, total_gross_equity)

@@ -7,7 +7,7 @@ class GoogleSheet:
         self.sh = self.gc.open(document)
         self.sheet = self.sh.worksheet(sheet_name)
 
-    def read_data(self, range): #range = "A1:E1". Data devolvera un array de la fila 1 desde la columna A hasta la E
+    def read_data(self, range): #range = "A1:E1". Data will return an array of row 1 from column A to column E.
         data = self.sheet.get(range)
         return data
 
@@ -16,7 +16,7 @@ class GoogleSheet:
         df = pd.DataFrame(data)
         print(df)
         filtered_data = df[df['uid'] == uid]
-        return filtered_data #devuelve un data frame de una tabla, de dos filas siendo la primera las cabeceras de las columnas y la segunda los valores filtrados para acceder a un valor en concreto df["nombre"].to_string()
+        return filtered_data # returns a data frame of a table, with two rows, the first one being the column headers and the second one the filtered values to access a specific value df["name"].to_string()
     
     def write_data(self, range, values): #range ej "A1:V1". values must be a list of list
         self.sheet.update(range, values)
