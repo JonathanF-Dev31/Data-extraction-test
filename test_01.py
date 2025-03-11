@@ -4,12 +4,21 @@ import re
 from test_02 import insert_data
 
 """
-Extracts income information from a PDF file.
-This function opens a PDF file, extracts text from each page, and uses regular expressions to find and extract the name of the owner and the total gross equity.
+Extracts income information from PDF files and uploads the extracted data to Google Sheets.
+
+This script scans a specified folder for PDF files, extracts text from each document, and applies
+regular expressions to retrieve the owner's name and total gross equity. The extracted information
+is then stored in a Google Sheet for further analysis.
+
+Dependencies:
+- PyPDF2: For reading PDF content
+- re: For applying regular expressions
+
 Args:
     pdf_path (str): The file path to the PDF file.
+
 Returns:
-    None: This function prints the extracted information (name owner and total gross equity) to the console.
+    None: The extracted information is uploaded to Google Sheets.
 """
 
 def exract_income_info(pdf_path):
